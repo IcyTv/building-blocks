@@ -1,11 +1,11 @@
 [package]
-name = "building_blocks_core"
-version = "0.7.0"
-edition = "2018"
 authors = ["Duncan <bonsairobo@gmail.com>"]
-license = "MIT"
-repository = "https://github.com/bonsairobo/building-blocks"
+edition = "2018"
 keywords = ["voxel"]
+license = "MIT"
+name = "building_blocks_core"
+repository = "https://github.com/bonsairobo/building-blocks"
+version = "0.7.0"
 
 description = "The core data types for defining 2D and 3D integer lattices."
 
@@ -22,10 +22,10 @@ morton-encoding = "2.0"
 num = "0.4"
 
 # Optional, feature-gated.
-serde = { version = "1.0", features = ["derive"], optional = true }
-glam = { version = "0.13.0", optional = true }
-mint = { version = "0.5.0", optional = true }
-nalgebra = { version = "0.28", optional = true }
-sdfu = { version = "0.3", optional = true }
-vox-format = { version = "0.1", optional = true }
-cgmath = { version = "0.18", optional = true }
+cgmath = {version = "0.18", optional = true}
+glam = {version = "0.20", optional = true}
+mint = {version = "0.5.0", optional = true}
+nalgebra = {version = "0.30", optional = true}
+sdfu = {version = "0.3", optional = true}
+serde = {version = "1.0", features = ["derive"], optional = true}
+vox-format = {version = "0.1", optional = true}

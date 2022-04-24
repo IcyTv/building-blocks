@@ -1,11 +1,11 @@
 [package]
-name = "building_blocks_storage"
-version = "0.7.0"
-edition = "2018"
 authors = ["Duncan <bonsairobo@gmail.com>"]
-license = "MIT"
-repository = "https://github.com/bonsairobo/building-blocks"
+edition = "2018"
 keywords = ["voxel", "mesh"]
+license = "MIT"
+name = "building_blocks_storage"
+repository = "https://github.com/bonsairobo/building-blocks"
+version = "0.7.0"
 
 description = "Efficient storage for maps on sparse or dense, 2D and 3D integer lattices."
 
@@ -13,8 +13,8 @@ description = "Efficient storage for maps on sparse or dense, 2D and 3D integer 
 all-features = true
 
 [dependencies]
-ahash = { version = "0.7", features = ["serde"] }
-auto_impl = "0.4"
+ahash = {version = "0.7", features = ["serde"]}
+auto_impl = "0.5"
 bytemuck = "1.7"
 either = "1.6"
 float-ord = "0.3"
@@ -22,27 +22,27 @@ futures = "0.3"
 slab = "0.4"
 thread_local = "1.1"
 
-building_blocks_core = { path = "../building_blocks_core", version = "0.7.0", default-features = false }
+building_blocks_core = {path = "../building_blocks_core", version = "0.7.0", default-features = false}
 
 # Optional, feature-gated.
-bincode = { version = "1.3", optional = true }
-serde = { version = "1.0", features = ["derive"], optional = true }
-dot_vox = { version = "4.1", optional = true }
-image = { version = "0.23", optional = true }
-lz4 = { version = "1.23", optional = true }
-sled = { git = "https://github.com/spacejam/sled", rev = "a0d51f2", optional = true }
-sled-snapshots = { git = "https://github.com/bonsairobo/sled-snapshots", rev = "45445c35", optional = true }
-snap = { version = "1.0", optional = true }
-tracing = { version = "0.1", features = ["release_max_level_info"], optional = true }
-vox-format = { version = "0.1", optional = true }
+bincode = {version = "1.3", optional = true}
+dot_vox = {version = "4.1", optional = true}
+image = {version = "0.24", optional = true}
+lz4 = {version = "1.23", optional = true}
+serde = {version = "1.0", features = ["derive"], optional = true}
+sled = {git = "https://github.com/spacejam/sled", rev = "a0d51f2", optional = true}
+sled-snapshots = {git = "https://github.com/bonsairobo/sled-snapshots", rev = "45445c35", optional = true}
+snap = {version = "1.0", optional = true}
+tracing = {version = "0.1", features = ["release_max_level_info"], optional = true}
+vox-format = {version = "0.1", optional = true}
 
 [dev-dependencies]
 criterion = "0.3"
-pretty_assertions = "0.7"
+pretty_assertions = "1.2"
 rand = "0.8"
 
 # Common code for tests and examples.
-utilities = { path = "../utilities" }
+utilities = {path = "../utilities"}
 
 [features]
 default = []
@@ -51,22 +51,22 @@ default = []
 vox-format-1 = ["vox-format", "building_blocks_core/vox-format"]
 
 [[bench]]
+harness = false
 name = "accessors"
-harness = false
 
 [[bench]]
+harness = false
 name = "sampling"
-harness = false
 
 [[bench]]
-name = "compression"
 harness = false
+name = "compression"
 required-features = ["bincode", "lz4", "snap", "serde"]
 
 [[bench]]
-name = "octree_set"
 harness = false
+name = "octree_set"
 
 [[bench]]
-name = "database"
 harness = false
+name = "database"

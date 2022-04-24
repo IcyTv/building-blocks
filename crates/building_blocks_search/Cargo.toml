@@ -1,11 +1,11 @@
 [package]
-name = "building_blocks_search"
-version = "0.7.0"
-edition = "2018"
 authors = ["Duncan <bonsairobo@gmail.com>"]
-license = "MIT"
-repository = "https://github.com/bonsairobo/building-blocks"
+edition = "2018"
 keywords = ["voxel"]
+license = "MIT"
+name = "building_blocks_search"
+repository = "https://github.com/bonsairobo/building-blocks"
+version = "0.7.0"
 
 description = "Search algorithms for voxel data."
 
@@ -19,24 +19,24 @@ ncollide = ["nalgebra", "ncollide3d", "building_blocks_core/nalgebra"]
 
 [dependencies]
 indexmap = "1.5"
-pathfinding = "2.1"
+pathfinding = "3.0"
 
 # Optional, feature-gated
-nalgebra = { version = "0.28", optional = true }
-ncollide3d = { version = "0.31", optional = true }
+nalgebra = {version = "0.30", optional = true}
+ncollide3d = {version = "0.33", optional = true}
 
-building_blocks_core = { path = "../building_blocks_core", version = "0.7.0", default-features = false }
-building_blocks_storage = { path = "../building_blocks_storage", version = "0.7.0", default-features = false }
+building_blocks_core = {path = "../building_blocks_core", version = "0.7.0", default-features = false}
+building_blocks_storage = {path = "../building_blocks_storage", version = "0.7.0", default-features = false}
 
 [dev-dependencies]
 criterion = "0.3"
 # Common code for tests and examples.
-utilities = { path = "../utilities" }
+utilities = {path = "../utilities"}
 
 [[bench]]
+harness = false
 name = "find_surface"
-harness = false
 
 [[bench]]
-name = "flood_fill"
 harness = false
+name = "flood_fill"
